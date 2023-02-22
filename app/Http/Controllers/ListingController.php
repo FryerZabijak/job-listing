@@ -8,10 +8,21 @@ use App\Http\Controllers\Controller;
 
 class ListingController extends Controller
 {
+
+    /*
+        index - show all
+        show - show single
+        create - show form to create
+        store - store new listing
+        edit - show form to edit listings
+        update - update listings
+        destroy - delete listing
+    */
     // Show all listings
     public function index(){
         return view('listings.index', [
-            "listings" => Listing::all()
+            "listings" => Listing::latest()->filter
+            (request(["tag", "search"]))->get()
         ]);
     }
 
