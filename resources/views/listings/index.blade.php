@@ -12,12 +12,7 @@
         @endunless
     </div>
 
-    <style>
-        p {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-    </style>
+    <div class="mt-6 p-4">
+        {{$listings->links()}}
+    </div>
 </x-layout>
